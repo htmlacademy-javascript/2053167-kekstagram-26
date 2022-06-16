@@ -4,7 +4,7 @@ function getRandomInteger(min, max) {
 }
 
 function getLengthString(stringNumber, maxLength ) {
-
   let maxStringLength = 140;
+
   return (maxLength < maxStringLength);
 }
