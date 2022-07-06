@@ -8,7 +8,7 @@ function checkStringLength (string, length) {
   return string.length <= length;
 };
 
-const createDescription = [
+const CREATE_DESCRIPTION = [
   'Good',
   'Not good',
   'Interesting moment',
@@ -16,7 +16,7 @@ const createDescription = [
   'Something foto',
   'Do not like moment'
 ];
-const NAMESInComments = [
+const NAMES_IN_COMMENTS = [
   'Ivan',
   'Huan',
   'Juli',
@@ -28,7 +28,7 @@ const NAMESInComments = [
   'Klara',
   'Dony'
 ];
-const COMMENTSFoto = [
+const COMMENTS_FOTO = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -42,8 +42,8 @@ const createComments = () => {
   return {
     id: getRandomPositiveInteger(0,1000),
     avatar: `img(avatar-${getRandomPositiveInteger(1,6)}.svg))`,
-    message: COMMENTSFoto[getRandomPositiveInteger(0, COMMENTSFoto.length - 1)],
-    name: NAMESInComments[getRandomPositiveInteger(0, NAMESInComments.length - 1)],
+    message: COMMENTS_FOTO[getRandomPositiveInteger(0, COMMENTS_FOTO.length - 1)],
+    name: NAMES_IN_COMMENTS [getRandomPositiveInteger(0, NAMES_IN_COMMENTS .length - 1)],
   };
 };
 
@@ -51,7 +51,7 @@ const createUsers = () => {
   return {
     id: getRandomPositiveInteger(0, 25),
     url: `photo/${getRandomPositiveInteger(1,25)}.jpg`,
-    description: [getRandomPositiveInteger (0, createDescription.length - 1)],
+    description: [getRandomPositiveInteger (0, CREATE_DESCRIPTION.length - 1)],
     likes: getRandomPositiveInteger(15, 200),
     comments: createComments (),
   };
