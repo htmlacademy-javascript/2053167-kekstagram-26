@@ -7,6 +7,7 @@ function getRandomPositiveInteger (a, b) {
 function checkStringLength (string, length) {
   return string.length <= length;
 };
+
 const createDescription = [
   'Good',
   'Not good',
@@ -15,7 +16,7 @@ const createDescription = [
   'Something foto',
   'Do not like moment'
 ];
-const namesInComments = [
+const NAMESInComments = [
   'Ivan',
   'Huan',
   'Juli',
@@ -27,7 +28,7 @@ const namesInComments = [
   'Klara',
   'Dony'
 ];
-const commentsFoto = [
+const COMMENTSFoto = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -36,14 +37,16 @@ const commentsFoto = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 const similarUsersCount = 25;
+
 const createComments = () => {
   return {
     id: getRandomPositiveInteger(0,1000),
     avatar: `img(avatar-${getRandomPositiveInteger(1,6)}.svg))`,
-    message: commentsFoto[getRandomPositiveInteger(0, commentsFoto.length - 1)],
-    name: namesInComments[getRandomPositiveInteger(0, namesInComments.length - 1)],
+    message: COMMENTSFoto[getRandomPositiveInteger(0, COMMENTSFoto.length - 1)],
+    name: NAMESInComments[getRandomPositiveInteger(0, NAMESInComments.length - 1)],
   };
 };
+
 const createUsers = () => {
   return {
     id: getRandomPositiveInteger(0, 25),
@@ -53,5 +56,6 @@ const createUsers = () => {
     comments: createComments (),
   };
 };
+
 const similarUsers = Array.from({length: similarUsersCount}, createUsers);
 console.log(createUsers);
